@@ -1,0 +1,110 @@
+{
+  "newUpdates": [
+    {
+      "id": 1,
+      "title": "Modern Day Meetings",
+      "desc": "Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....",
+      "img": "https://static.wixstatic.com/media/f84f9edff22c4f77a4be1f9898b2f8d6.jpg/v1/fill/w_454,h_341,fp_0.50_0.50,q_90,enc_auto/f84f9edff22c4f77a4be1f9898b2f8d6.jpg",
+      "descImg": "Welcome to your blog post. Use this space to connect with your readers and potential customers in a way that’s current and interesting. Think of it as an ongoing conversation where you can share updates about business, trends, news, and more.",
+      "likes": "8"
+    },
+    {
+      "id": 2,
+      "title": "Balancing Checkbooks",
+      "desc": "Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....",
+      "img": "../src/assets/img/new-title2.png",
+      "likes": "9"
+    },
+    {
+      "id": 3,
+      "title": "Q4 Analysis",
+      "desc": "Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....",
+      "img": "../src/assets/img/new-title3.png",
+      "likes": "7"
+    },
+    {
+      "id": 4,
+      "title": "Invest Now, Earn Later",
+      "desc": "Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....",
+      "img": "../src/assets/img/new-title4.png",
+      "likes": "1"
+    },
+    {
+      "id": 5,
+      "title": "Time Is Money",
+      "desc": "Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....",
+      "img": "../src/assets/img/new-title5.png",
+      "likes": "4"
+    },
+    {
+      "id": 6,
+      "title": "Savings Plan Update",
+      "desc": "Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....",
+      "img": "../src/assets/img/new-title6.png",
+      "likes": "9"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "img": "../src/assets/img/book1.png",
+      "title": "Credit Card",
+      "time": "1 hr",
+      "price": "Introductory Meeting"
+    },
+    {
+      "id": 2,
+      "img": "../src/assets/img/book2.png",
+      "title": "Savings",
+      "time": "1 hr",
+      "price": "Introductory Meeting"
+    },
+    {
+      "id": 3,
+      "img": "../src/assets/img/book3.png",
+      "title": "Financial News",
+      "time": "1 hr",
+      "price": "Introductory Meeting"
+    },
+    {
+      "id": 4,
+      "img": "../src/assets/img/book4.png",
+      "title": "Interests",
+      "time": "1 hr",
+      "price": "Introductory Meeting"
+    },
+    {
+      "id": 5,
+      "img": "../src/assets/img/book5.png",
+      "title": "Investments",
+      "time": "1 hr",
+      "price": "Introductory Meeting"
+    },
+    {
+      "id": 6,
+      "img": "../src/assets/img/book6.png",
+      "title": "Business Planning Workshop",
+      "time": "3 hr",
+      "price": "$90"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "123",
+      "lastName": "312",
+      "email": "quocvi2222@gmail.com",
+      "password": "123",
+      "passwordConfirm": "123",
+      "id": 1
+    },
+    {
+      "firstName": "Vĩ",
+      "lastName": "Quoc",
+      "email": "test@gmail.com",
+      "password": "123",
+      "passwordConfirm": "123",
+      "id": 2
+    }
+    
+  ]
+}
