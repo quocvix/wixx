@@ -16,6 +16,9 @@
                     <router-link :to="{ name: 'home' }" class="navMenu m-2"
                         ><a class="c-link hover:text-blue-300 text-sm" href="#">Home</a>
                     </router-link>
+                    <router-link :to="{ name: 'booklist' }" class="navMenu m-2"
+                        ><a class="c-link hover:text-blue-300 text-sm" href="#">BookList</a>
+                    </router-link>
                     <li class="navMenu lg:m-2">
                         <a class="c-link hover:text-blue-300 text-sm" href="#">About</a>
                     </li>

@@ -44,10 +44,10 @@
                                         class="border border-black cursor-pointer"
                                         v-for="time in times"
                                         :key="time.id"
-                                        @click="selectTime(time.time)"
-                                        :class="{ selectedTime: time === time.time }"
+                                        @click="selectTime(time.value)"
+                                        :class="{ selected: slectedTime === time.value }"
                                     >
-                                        <a class="px-10 py-2 block" @click="handleClick(time.id)">{{ time.time }}</a>
+                                        <a class="px-10 py-2 block" @click="handleClick(time.id)">{{ time.value }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                     <p class="py-4">Service Details</p>
                     <div class="py-2">
                         <p>{{ book.title }}</p>
-                        <p>{{ format(date) }} at {{ time }}</p>
+                        <p>{{ format(date) }} at {{ slectedTime }}</p>
                     </div>
                     <div class="py-4">
                         <p>San Francisco</p>
@@ -98,55 +98,55 @@ export default {
             li: null,
             book: null,
             date: new Date(),
-            time: "",
+            slectedTime: "10:00 am",
             times: [
                 {
                     id: 1,
-                    time: "10:00 am",
+                    value: "10:00 am",
                 },
                 {
                     id: 2,
-                    time: "10:30 am",
+                    value: "10:30 am",
                 },
                 {
                     id: 3,
-                    time: "11:00 am",
+                    value: "11:00 am",
                 },
                 {
                     id: 4,
-                    time: "11:30 am",
+                    value: "11:30 am",
                 },
                 {
                     id: 5,
-                    time: "12:00 am",
+                    value: "12:00 am",
                 },
                 {
                     id: 6,
-                    time: "12:30 am",
+                    value: "12:30 am",
                 },
                 {
                     id: 7,
-                    time: "1:00 pm",
+                    value: "1:00 pm",
                 },
                 {
                     id: 8,
-                    time: "1:30 pm",
+                    value: "1:30 pm",
                 },
                 {
                     id: 9,
-                    time: "2:00 pm",
+                    value: "2:00 pm",
                 },
                 {
                     id: 10,
-                    time: "2:30 pm",
+                    value: "2:30 pm",
                 },
                 {
                     id: 11,
-                    time: "3:00 pm",
+                    value: "3:00 pm",
                 },
                 {
                     id: 12,
-                    time: "3:30 pm",
+                    value: "3:30 pm",
                 },
             ],
         };
@@ -178,14 +178,18 @@ export default {
         handleClick(id) {
             this.time = this.times.find((time) => time.id === id).time;
         },
-        selectTime(timee) {
-            this.time = timee;
+        selectTime(time) {
+            this.slectedTime = time;
         },
     },
 };
 </script>
 
 <style>
+.selected {
+    background: #3b58b81f;
+    border: rgb(37, 37, 221) 1px solid;
+}
 /* .mx-calendar {
     width: 500px;
 } */

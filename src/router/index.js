@@ -8,6 +8,7 @@ import Book from "../components/Book.vue";
 import BookDetail from "../components/BookDetail.vue";
 import SignIn from "../components/SignIn.vue";
 import SignUp from "../components/SignUp.vue";
+import BookList from "../components/BookList.vue";
 
 Vue.use(VueRouter);
 
@@ -52,6 +53,11 @@ const router = new VueRouter({
             name: "bookDetail",
             component: BookDetail,
             props: true,
+        },
+        {
+            path: "/booklist",
+            name: "booklist",
+            component: BookList,
         },
     ],
 });
