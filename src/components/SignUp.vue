@@ -161,7 +161,7 @@ export default {
                     },
                 };
                 console.log(data);
-                let results = await axios.post(" http://localhost:3000/users", data);
+                let results = await axios.post("http://localhost:3000/users", data);
 
                 if (results.status == 201) {
                     localStorage.setItem("user-info", JSON.stringify(results.data));

@@ -9,6 +9,7 @@ import BookDetail from "../components/BookDetail.vue";
 import SignIn from "../components/SignIn.vue";
 import SignUp from "../components/SignUp.vue";
 import BookList from "../components/BookList.vue";
+import Booked from "../components/Booked.vue";
 
 Vue.use(VueRouter);
 
@@ -58,6 +59,11 @@ const router = new VueRouter({
             path: "/booklist",
             name: "booklist",
             component: BookList,
+        },
+        {
+            path: "/booked",
+            name: "booked",
+            component: Booked,
         },
     ],
 });
