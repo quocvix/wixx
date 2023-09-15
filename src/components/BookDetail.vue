@@ -1,6 +1,6 @@
 <template>
     <div v-if="book" class="container mx-auto px-4 py-4 h-screen">
-        <div v-if="isVisible">
+        <div class="services" v-if="isVisible">
             <!-- Header -->
             <div class="py-5">
                 <router-link :to="{ name: 'book' }" class="flex items-center"
@@ -61,7 +61,7 @@
                 <!-- Credit Card -->
                 <div>
                     <div>
-                        <p class="py-4">Service Details</p>
+                        <p class="text-xl py-4">Service Details</p>
                         <div class="py-2">
                             <p>{{ book.title }}</p>
                             <p>{{ format(date) }} at {{ booked.selectedTime }}</p>
@@ -74,20 +74,20 @@
                         </div>
                         <hr />
                         <div class="px-6 py-5 pt-9">
-                            <!-- <router-link :to="{ name: 'booked' }" class="flex items-center"> -->
                             <button
                                 @click="hide()"
+                                :disabled="loading"
                                 class="border w-full px-8 py-2 text-lg text-white font-light bg-[#c63f60] hover:bg-[#78343b] hover:text-white border-[#78343b] transition duration-500"
                             >
-                                Next
+                                <span v-if="loading"><i class="fas fa-spinner fa-spin"></i></span>
+                                <span v-else>Next</span>
                             </button>
-                            <!-- </router-link> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div v-show="isInputVisible">
+        <div class="books" v-show="isInputVisible">
             <!-- Header -->
             <div class="py-5">
                 <a @click="show()" class="flex items-center cursor-pointer"
@@ -150,7 +150,7 @@
                     <!-- Credit Card -->
                     <div>
                         <div>
-                            <p class="py-4">Service Details</p>
+                            <p class="text-xl py-4">Book Details</p>
                             <div class="py-2">
                                 <p>{{ book.title }}</p>
                                 <p>{{ format(date) }} at {{ booked.selectedTime }}</p>
@@ -193,6 +193,7 @@ export default {
 
     data() {
         return {
+            loading: false,
             status: "daMua",
             isVisible: true,
             isInputVisible: false,
@@ -330,8 +331,12 @@ export default {
             this.booked.selectedTime = time;
         },
         hide() {
-            this.isVisible = false;
-            this.isInputVisible = true;
+            this.loading = true;
+            setTimeout(() => {
+                this.isVisible = false;
+                this.isInputVisible = true;
+                this.loading = false;
+            }, 2000);
         },
         show() {
             this.isVisible = true;

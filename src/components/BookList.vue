@@ -1,22 +1,13 @@
 <template>
-    <!-- header-search -->
     <div class="container mx-auto px-4 h-screen">
-        <!-- <div class="search_mobile flex justify-between">
-            <div class="input-box transition-all duration-500">
-                <input type="text" placeholder="Search" />
-                <span class="search">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                </span>
-                <i class="fa-solid fa-xmark close-icon"></i>
-            </div>
-        </div> -->
-        <div class="header_book"></div>
+        <!-- Search -->
+
         <!-- Tabs -->
-        <div class="tabs">
+        <div class="tab">
             <div class="tabLinks">
-                <div class="bg-red-300 grid grid-cols-3">
+                <div class="grid grid-cols-3">
                     <div
-                        class="tab px-4 py-4 text-center"
+                        class="tabs px-4 py-4 text-center"
                         v-for="tab in tabs"
                         :key="tab.status"
                         @click="selectTab(tab.status)"
@@ -33,6 +24,7 @@
                 <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                         <div class="overflow-hidden">
+                            <!-- tab - Da Mua -->
                             <table
                                 v-if="currentTab === 'daMua'"
                                 class="min-w-full border text-center text-sm font-light dark:border-neutral-500"
@@ -127,7 +119,7 @@
                             <!-- tab - Da Huy -->
                             <table
                                 v-if="currentTab === 'daHuy'"
-                                class="min-w-full border text-center text-sm font-light dark:border-neutral-500"
+                                class="min-w-full border text-sm font-light dark:border-neutral-500"
                             >
                                 <thead
                                     class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900"
@@ -179,14 +171,10 @@
 </template>
 
 <script>
-import Datepicker from "vue2-datepicker";
 import { format } from "date-fns";
 import axios from "axios";
 
 export default {
-    components: {
-        Datepicker,
-    },
     data() {
         return {
             bookList: [],
@@ -228,9 +216,17 @@ export default {
 </script>
 
 <style scoped>
-.tabs .activeTab {
-    background: wheat;
+.tab .activeTab {
+    background: lightblue;
 }
+
+.tab .tabs {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+}
+
 img {
     display: block;
     max-width: 100px;
