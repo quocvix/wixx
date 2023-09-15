@@ -73,7 +73,7 @@
                                             {{ item.booked.email }}
                                         </td>
                                         <td class="whitespace-nowrap border-r px-6 py-4 dark:border-neutral-500">
-                                            {{ item.date }} at {{ item.booked.selectedTime }}
+                                            {{ formatDate(item.date) }} at {{ item.booked.selectedTime }}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -119,7 +119,7 @@
                                             {{ item.booked.email }}
                                         </td>
                                         <td class="whitespace-nowrap border-r px-6 py-4 dark:border-neutral-500">
-                                            {{ item.date }} at {{ item.booked.selectedTime }}
+                                            {{ formatDate(item.date) }} at {{ item.booked.selectedTime }}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -165,7 +165,7 @@
                                             {{ item.booked.email }}
                                         </td>
                                         <td class="whitespace-nowrap border-r px-6 py-4 dark:border-neutral-500">
-                                            {{ item.date }} at {{ item.booked.selectedTime }}
+                                            {{ formatDate(item.date) }} at {{ item.booked.selectedTime }}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -180,6 +180,7 @@
 
 <script>
 import Datepicker from "vue2-datepicker";
+import { format } from "date-fns";
 import axios from "axios";
 
 export default {
@@ -218,6 +219,9 @@ export default {
         },
         selectTab(tabStatus) {
             this.currentTab = tabStatus;
+        },
+        formatDate(date) {
+            return format(new Date(date), "MMMM dd, yyyy");
         },
     },
 };
