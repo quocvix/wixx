@@ -5,3 +5,7 @@ html {
 .container {
     max-width: 1024px;
 }
+
+.mx-datepicker-popup {
+    top: 467px;
+}

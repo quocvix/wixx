@@ -29,7 +29,7 @@
                     </router-link>
                 </div>
                 <div class="text-center px-6 py-4">
-                    <div class="px-6 py-4">
+                    <div class="px-6 py-4 h-40">
                         <router-link :to="{ name: 'bookDetail', params: { id: book.id } }">
                             <p class="text-xl mb-2 hover:text-[#828282]">{{ book.title }}</p>
                         </router-link>
@@ -37,7 +37,7 @@
                         <p class="text-gray-700 text-base py-2">{{ book.time }}</p>
                         <p class="text-gray-700 text-base">{{ book.price }}</p>
                     </div>
-                    <div class="px-6 py-5 pt-9">
+                    <div class="px-6 py-5 pt-4">
                         <router-link :to="{ name: 'bookDetail', params: { id: book.id } }">
                             <button
                                 class="border px-8 py-2 text-lg text-white font-light bg-[#3b58b8] hover:bg-[#758acd] transition duration-500"
