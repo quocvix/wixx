@@ -105,7 +105,8 @@ export default {
 
                 if (results.status == 200 && results.data.length > 0) {
                     localStorage.setItem("user-info", JSON.stringify(results.data[0]));
-                    this.$router.push("/");
+                    this.$router.push("/"); // Chuyển về trang Home
+                    this.$router.go(); // Reload trang Home một lần duy nhất
                 }
                 if (results.data == 0) {
                     alert("sai email hoặc mật khẩu");

@@ -39,7 +39,7 @@
                         <a class="c-link hover:text-blue-300 text-sm" href="#contact">Contact</a>
                     </li>
                 </div>
-                <router-link :to="{ name: 'signin' }">
+                <!-- <router-link :to="{ name: 'signin' }">
                     <div class="flex py-4 cursor-pointer ml-2">
                         <button class="flex items-center gap-3 text-blue-800 hover:text-blue-300">
                             <div>
@@ -51,7 +51,39 @@
                             <span class="">Log In</span>
                         </button>
                     </div>
-                </router-link>
+                </router-link> -->
+
+                <div class="flex py-4 cursor-pointer ml-2">
+                    <button v-if="!isLoggedIn">
+                        <router-link
+                            :to="{ name: 'signin' }"
+                            class="flex items-center gap-3 text-blue-800 hover:text-blue-300"
+                        >
+                            <div>
+                                <i
+                                    class="fa-solid fa-circle-user w-6 h-6 login-btn text-3xl"
+                                    style="color: #3b58b8"
+                                ></i>
+                            </div>
+                            <span class="">Log In</span>
+                        </router-link>
+                    </button>
+                    <div v-else @click="toggleUserMenu" class="relative flex items-center gap-3 text-blue-800">
+                        <div>
+                            <i class="fa-solid fa-circle-user w-6 h-6 login-btn text-3xl" style="color: #3b58b8"></i>
+                        </div>
+                        <span class="hover:text-blue-300">{{ userName }}</span>
+                        <!-- Dropdown menu (nếu bạn muốn) -->
+                        <div
+                            v-if="showUserMenu"
+                            class="absolute top-10 right-0 mt-2 w-40 bg-white border border-gray-300 rounded shadow-lg"
+                        >
+                            <button @click="logout" class="block w-full px-4 py-2 text-left hover:bg-gray-100">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </ul>
 
             <div id="menu-btn" name="menu" onclick="Menu(this)" class="z-20 first-line: md:hidden cursor-pointer">
@@ -87,4 +119,39 @@
 }
 </style>
 
-<script scoped></script>
+<script>
+export default {
+    data() {
+        return {
+            isLoggedIn: false,
+            userName: "",
+            showUserMenu: false, // kiểm soát việc hiển thị/ẩn dropdown menu
+        };
+    },
+    created() {
+        // Kiểm tra xem dữ liệu uer đã đăng nhập có trong Local Storage không
+        const userDataString = localStorage.getItem("user-info");
+        if (userDataString) {
+            // Nếu có dữ liệu, chuyển đổi chuỗi JSON thành đối tượng JavaScript
+            const userData = JSON.parse(userDataString);
+            // Gán tên người dùng cho biến userName
+            this.userName = userData.firstName;
+            // Đặt isLoggedIn là true để ẩn nút "Log In" và hiển thị tên user
+            this.isLoggedIn = true;
+        }
+    },
+
+    methods: {
+        // ... Các phương thức khác
+        toggleUserMenu() {
+            this.showUserMenu = !this.showUserMenu;
+        },
+        logout() {
+            // Xóa dữ liệu người dùng khỏi Local Storage và đặt lại các biến
+            localStorage.removeItem("user-info");
+            this.userName = "";
+            this.isLoggedIn = false;
+        },
+    },
+};
+</script>

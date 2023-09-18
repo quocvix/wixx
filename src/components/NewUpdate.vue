@@ -153,9 +153,6 @@
 </template>
 
 <script>
-// import { heart } from "../assets/js/search";
-// import Heart from "./Heart.vue";
-
 export default {
     data() {
         return {

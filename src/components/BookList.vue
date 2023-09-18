@@ -371,9 +371,6 @@ export default {
             return format(new Date(date), "MMMM dd, yyyy");
         },
         filterItems() {
-            // Lọc dữ liệu theo tab hiện tại (Đã Mua, Đã Giao, Đã Hủy)
-            // const filteredData = this.bookList.filter((item) => item.status === this.currentTab)
-
             // Lọc dữ liệu date & time dựa trên query
             return this.filteredItems.filter((item) => {
                 const date = this.formatDate(item.date);

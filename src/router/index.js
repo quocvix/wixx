@@ -36,7 +36,6 @@ const router = new VueRouter({
             path: "/new",
             name: "new",
             component: NewUpdate,
-            // component: () => import("../views/AboutView.vue"),
         },
         {
             path: "/new/:id",
